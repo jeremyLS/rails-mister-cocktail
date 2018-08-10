@@ -8,16 +8,14 @@
   <div class="banner-content">
     <h1>JLS's Cocktails </h1>
     <a class="btn-treehouse" href="https:www.youtube.com/watch?v=gIlGnaefCck">Cocktail of the day </a>
-    <%= link_to 'New cocktail', new_cocktail_path %>
+    <%= link_to 'New cocktail', new_cocktail_path, class: 'btn-treehouse' %>
   </div>
 </div>
 <div class="row">
-  <div class="col-sm">col-sm</div>
-  <div class="col-sm">col-sm</div>
-  <div class="col-sm">col-sm</div>
-</div>
 
 <% @cocktails.each do |cocktail| %>
+  <div class="col-sm-12 col-md-4">
+
 
   <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
 
@@ -27,8 +25,7 @@
            url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
     <div class="card-category">Popular</div>
     <div class="card-description">
-      <h2>Some stuff</h2>
-      <p>Very cool stuff, useful and smart</p>
+      <h2> LA TIZE</h2>
     </div>
     <a class="card-link" href="#" ></a>
   </div>
@@ -39,14 +36,15 @@
            url('http://cdn1-www.mandatory.com/assets/uploads/2015/07/man_file_1060278_drunk+guy.jpg');background-repeat: no-repeat;">
     <div class="card-category">Popular</div>
     <div class="card-description">
-      <h2>Some stuff</h2>
-      <p>Very cool stuff, useful and smart</p>
+      <h2>LA TIZE</h2>
     </div>
     <a class="card-link" href="#" ></a>
   </div>
   <% end %>
 
+  </div>
 <% end %>
+</div>
 
 
 
