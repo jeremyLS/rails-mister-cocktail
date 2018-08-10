@@ -66,3 +66,5 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+
+gem 'dotenv-rails', groups: [:development, :test]
