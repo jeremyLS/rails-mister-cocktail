@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show, :edit, :destroy]
+  before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   def index
     @cocktails = Cocktail.all
   end
@@ -18,16 +18,13 @@ class CocktailsController < ApplicationController
   def edit
   end
   def update
-  respond_to do |format|
+
     if @cocktail.update(cocktail_params)
-      format.html { redirect_to @cocktail, notice: 'cocktail was successfully updated.' }
-      format.json { render :show, status: :ok, location: @cocktail }
+      redirect_to @cocktail, notice: 'cocktail was successfully updated.'
     else
-      format.html { render :edit }
-      format.json { render json: @cocktail.errors, status: :unprocessable_entity }
+      render :edit
     end
   end
-end
   # def destroy
   # @cocktail.destroy
   # respond_to do |format|
@@ -45,6 +42,6 @@ end
 
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :ingredients, :doses)
+    params.require(:cocktail).permit(:name, :ingredients, :doses, :photo)
   end
 end

@@ -20,3 +20,9 @@ c3 = Cocktail.create!(name: "absolute swag")
 Dose.create!(description: "6cl", cocktail: c1, ingredient: i1)
 Dose.create!(description: "8cl", cocktail: c2, ingredient: i2)
 Dose.create!(description: "4cl", cocktail: c3, ingredient: i3)
+
+
+url = "http://cdn1-www.mandatory.com/assets/uploads/2015/07/man_file_1060278_drunk+guy.jpg"
+cocktail = Cocktail.new(name: 'lol')
+cocktail.remote_photo_url = url
+cocktail.save
